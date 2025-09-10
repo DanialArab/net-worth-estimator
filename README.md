@@ -231,71 +231,38 @@ weights_i = softmax(similarity_i * temperature)
 estimated_worth = Σ(weights_i * net_worth_i)
 ```
 
-## 🚀 Deployment Options
+## 🚀 Deployment
 
-### Option 1: Docker Compose (Development)
+### Production Deployment on Render.com
+
+This application is deployed on **Render.com**, a modern cloud platform that provides seamless Docker-based deployments.
+
+**Live API:** https://net-worth-estimator.onrender.com/docs
+
+#### Why Render.com?
+- **Docker-first approach:** Native support for Dockerfile deployments
+- **Automatic deployments:** Deploys automatically on Git push
+- **Built-in SSL:** HTTPS enabled by default
+- **Health monitoring:** Automatic health checks and restarts
+- **Scalable:** Easy horizontal scaling as needed
+
+#### Deployment Process:
+1. **Connect Repository:** Link your GitHub repository to Render
+2. **Auto-detect Dockerfile:** Render automatically detects and uses the Dockerfile
+3. **Configure Resources:** Set memory allocation (1GB+ recommended)
+4. **Deploy:** Automatic build and deployment on every push
+
+### Local Development with Docker Compose
 
 ```bash
 docker-compose up -d
 ```
 
-**Pros:** Easy local development, automatic restarts, health checks
-**Cons:** Single-machine deployment only
-
-### Option 2: Cloud Deployment
-
-#### Heroku
-```bash
-# Install Heroku CLI and login
-heroku create your-app-name
-heroku container:push web
-heroku container:release web
-```
-
-#### AWS ECS/Fargate
-1. Push image to ECR
-2. Create ECS task definition
-3. Deploy as Fargate service
-
-#### Google Cloud Run
-```bash
-gcloud run deploy net-worth-estimator \
-  --image gcr.io/PROJECT-ID/net-worth-estimator \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated
-```
-
-### Option 3: Kubernetes
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: net-worth-estimator
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: net-worth-estimator
-  template:
-    metadata:
-      labels:
-        app: net-worth-estimator
-    spec:
-      containers:
-      - name: api
-        image: net-worth-estimator:latest
-        ports:
-        - containerPort: 8000
-        resources:
-          requests:
-            memory: "2Gi"
-            cpu: "500m"
-          limits:
-            memory: "4Gi"
-            cpu: "2000m"
-```
+**Features:**
+- Easy local development setup
+- Automatic restarts and health checks
+- Volume mounting for development
+- Consistent with production environment
 
 ## ⚙️ Configuration & Environment
 
