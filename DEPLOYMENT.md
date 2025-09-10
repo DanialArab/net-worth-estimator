@@ -4,7 +4,7 @@
 
 ### Prerequisites
 - Docker working locally ✅
-- Nixpacks configuration ready ✅
+- Sevalla configuration ready ✅ (`sevalla.json`)
 - Health checks implemented ✅
 
 ### Quick Deploy to Sevalla
@@ -18,7 +18,8 @@
 
 2. **Connect repository to Sevalla**:
    - Link your GitHub/GitLab repository
-   - Sevalla will automatically detect the `nixpacks.toml` configuration
+   - Sevalla will detect the `sevalla.json` configuration
+   - This forces Docker build instead of Nixpacks (avoids build conflicts)
 
 3. **Set Environment Variables** (optional):
    ```
