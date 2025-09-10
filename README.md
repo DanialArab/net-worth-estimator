@@ -93,6 +93,13 @@ curl -X POST "http://localhost:8000/predict" \
 }
 ```
 
+**Response Fields:**
+- **`confidence_score`**: Average similarity score of top 3 matches (0.0-1.0)
+  - **0.9-1.0**: Very high confidence - strong similarity to wealthy individuals
+  - **0.7-0.9**: High confidence - good matches found  
+  - **0.5-0.7**: Medium confidence - moderate similarity
+  - **< 0.5**: Lower confidence - weaker matches
+
 ### Other Endpoints
 
 - `GET /` - API information and available endpoints
