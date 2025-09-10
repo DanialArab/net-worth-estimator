@@ -140,7 +140,7 @@ curl -X POST "http://localhost:8000/predict" \
 - **Rationale:** Proven model with excellent facial recognition performance
 - **Face Detection:** MTCNN for robust face detection and alignment
 - **Fallback Strategy:** Uses full image if face detection fails
-- **Output:** 512-dimensional L2-normalized embeddings
+- **Output:** 512-dimensional L2-normalized embeddings, reduced to 32 dimensions via PCA
 
 **Key Features:**
 - Automatic face detection and alignment
@@ -176,9 +176,10 @@ curl -X POST "http://localhost:8000/predict" \
 1. **Image Upload** → Validation (type, size, format)
 2. **Preprocessing** → Face detection & alignment using MTCNN
 3. **Feature Extraction** → 512-dim embeddings via FaceNet
-4. **Similarity Computation** → Cosine similarity against wealthy individuals DB
-5. **Net Worth Estimation** → Weighted combination of similar profiles
-6. **Response Formatting** → JSON with estimates and top matches
+4. **Dimensionality Reduction** → PCA reduces 512 dims to 32 dims
+5. **Similarity Computation** → Cosine similarity against wealthy individuals DB
+6. **Net Worth Estimation** → Weighted combination of similar profiles
+7. **Response Formatting** → JSON with estimates and top matches
 
 ## 🗂️ Project Structure
 
@@ -214,6 +215,17 @@ net-worth-estimator/
 - **Multi-stage:** P-Net → R-Net → O-Net cascade
 - **Features:** Face detection, landmark detection, alignment
 - **Robustness:** Handles various face orientations and lighting
+
+### Dimensionality Reduction: PCA
+
+**Architecture Decision:** Reduce 512-dimensional FaceNet embeddings to 32 dimensions
+- **Rationale:** Improves computational efficiency and storage requirements
+- **Method:** Principal Component Analysis (PCA) preserves most important variance
+- **Benefits:**
+  - **94% size reduction** (512 → 32 dimensions)
+  - **Faster similarity computation** with smaller vectors
+  - **Reduced memory usage** for embedding storage
+  - **Maintained accuracy** while improving performance
 
 ### Similarity Computation
 
