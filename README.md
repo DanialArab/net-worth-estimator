@@ -153,7 +153,7 @@ curl -X POST "http://localhost:8000/predict" \
 **Key Features:**
 - Efficient matrix operations using NumPy/scikit-learn
 - Multiple estimation algorithms
-- Randomness injection for realistic variance (±25%)
+- Deterministic results for consistency and reproducibility
 - Confidence scoring based on similarity scores
 
 #### 3. API Layer (`main.py`)
@@ -223,12 +223,12 @@ The default algorithm uses **weighted top-3 averaging**:
 2. **Select Top-K:** Identify 3 most similar profiles
 3. **Weight Calculation:** Apply softmax to similarity scores for weighting
 4. **Weighted Average:** Combine net worths using computed weights
-5. **Noise Injection:** Add ±25% randomness for realistic variance
+5. **Deterministic Output:** Return consistent results for reproducibility
 
 **Mathematical Formula:**
 ```
 weights_i = softmax(similarity_i * temperature)
-estimated_worth = Σ(weights_i * net_worth_i) * noise_factor
+estimated_worth = Σ(weights_i * net_worth_i)
 ```
 
 ## 🚀 Deployment Options
