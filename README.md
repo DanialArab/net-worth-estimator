@@ -250,6 +250,12 @@ weights_i = softmax(similarity_i * temperature)
 estimated_worth = Σ(weights_i * net_worth_i)
 ```
 
+**Temperature Parameter:**
+- **Purpose**: Controls the "sharpness" of the probability distribution
+- **High temperature (10)**: More uniform distribution (used in `weighted_average`)
+- **Low temperature (5)**: More focused on top matches (used in `top_3_average`)
+- **Effect**: Higher temperature = smoother weights, Lower temperature = sharper weights
+
 ## 🚀 Deployment
 
 ### Production Deployment on Render.com
