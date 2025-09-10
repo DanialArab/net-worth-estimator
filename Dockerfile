@@ -1,11 +1,4 @@
-# Force Docker build - ignore Nixpacks
-# DOCKER_BUILD_ONLY=true
 FROM python:3.11-slim
-
-# Labels to identify this as a Docker-only build
-LABEL builder="docker" \
-      build.type="dockerfile" \
-      nixpacks.disable="true"
 
 # Set working directory
 WORKDIR /app
@@ -18,11 +11,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching
-COPY requirements.docker.txt ./requirements.txt
+COPY requirements.txt .
 
-# Install Python dependencies with CPU-only PyTorch for smaller size
-RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu && \
-    pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY src/ ./src/

@@ -3,8 +3,9 @@ fastapi==0.104.1
 uvicorn[standard]==0.24.0
 python-multipart==0.0.6
 
-# Machine Learning & Computer Vision - Optimized for deployment (CPU-only)
-# torch and torchvision installed separately with CPU-only index
+# Machine Learning & Computer Vision - Optimized for deployment
+torch==2.1.0
+torchvision==0.16.0
 facenet-pytorch==2.5.3
 pillow==10.0.1
 numpy==1.24.3

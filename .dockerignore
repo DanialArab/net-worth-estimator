@@ -3,13 +3,8 @@
 README.md
 Dockerfile
 .dockerignore
-.nixpacks/
 .nixpacks
 nixpacks.toml
-nixpacks.toml.backup
-*.nix
-.nix-*
-sevalla.json
 docker-compose.yml
 .env
 .env.local
