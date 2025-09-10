@@ -388,7 +388,7 @@ Check: GPU availability with torch.cuda.is_available()
 
 - **Endpoint:** `GET /health`
 - **Docker:** Built-in health check every 30s
-- **Kubernetes:** Readiness and liveness probes
+- **Render.com:** Automatic health monitoring and restarts
 
 ### Logging
 
