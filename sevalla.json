@@ -1,7 +1,8 @@
 {
   "build": {
     "type": "docker",
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile.sevalla",
+    "buildCommand": "docker build -f Dockerfile.sevalla -t app ."
   },
   "deploy": {
     "port": 8000,

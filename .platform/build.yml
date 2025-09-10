@@ -1,0 +1,6 @@
+version: 1.0
+build:
+  type: docker
+  dockerfile: Dockerfile.sevalla
+  disable_nixpacks: true
+  force_docker: true
