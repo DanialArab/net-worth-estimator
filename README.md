@@ -412,17 +412,6 @@ Check: GPU availability with torch.cuda.is_available()
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **FaceNet:** Schroff, F., Kalenichenko, D., & Philbin, J. (2015)
-- **MTCNN:** Zhang, K., Zhang, Z., Li, Z., & Qiao, Y. (2016)
-- **VGGFace2:** Cao, Q., Shen, L., Xie, W., Parkhi, O. M., & Zisserman, A. (2018)
-- **FastAPI:** Sebastián Ramirez and the FastAPI team
-
 ---
 
 **⚠️ Disclaimer:** This is a demonstration project for technical assessment. It should not be used for actual financial decisions or real-world wealth estimation.
