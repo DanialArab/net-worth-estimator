@@ -1,8 +1,8 @@
-# Net Worth Estimator API
+# Wealth Potential Estimator API
 
 An AI-powered service that estimates a user's potential net worth based on facial features extracted from selfie images. The service compares user features against a database of wealthy individuals to provide net worth estimates and similarity matches.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Using Docker Compose (Recommended)
 
