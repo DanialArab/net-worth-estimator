@@ -26,8 +26,11 @@ RUN mkdir -p uploads temp
 # Expose port
 EXPOSE 8000
 
-# Set Python path
+# Set Python path and memory optimization
 ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+ENV TORCH_THREAD=1
+ENV OMP_NUM_THREADS=1
 
 # Run the application
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
