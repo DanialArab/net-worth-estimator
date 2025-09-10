@@ -4,7 +4,6 @@ README.md
 Dockerfile
 .dockerignore
 .nixpacks
-nixpacks.toml
 docker-compose.yml
 .env
 .env.local
