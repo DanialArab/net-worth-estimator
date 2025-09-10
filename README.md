@@ -2,13 +2,19 @@
 
 An AI-powered service that estimates a user's potential net worth based on facial features extracted from selfie images. The service compares user features against a database of wealthy individuals to provide net worth estimates and similarity matches.
 
+## 🚀 Live Demo
+
+**Try the API:** https://net-worth-estimator.onrender.com/docs
+
+*Interactive Swagger UI documentation with live API testing capabilities*
+
 ## Quick Start
 
 ### Using Docker Compose (Recommended)
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/DanialArab/net-worth-estimator.git
 cd net-worth-estimator
 
 # Build and run the service
@@ -302,12 +308,12 @@ spec:
 ### Resource Requirements
 
 **Minimum:**
-- RAM: 2GB (CPU inference)
+- RAM: 1GB (tested ~480MB usage, with startup buffer)
 - CPU: 2 cores
 - Disk: 1GB (models + dependencies)
 
 **Recommended (Production):**
-- RAM: 4GB
+- RAM: 2-4GB (for traffic spikes and multiple requests)
 - CPU: 4 cores
 - GPU: Optional (significant speedup)
 - Disk: 2GB + logs
