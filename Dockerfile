@@ -1,4 +1,11 @@
+# Force Docker build - ignore Nixpacks
+# DOCKER_BUILD_ONLY=true
 FROM python:3.11-slim
+
+# Labels to identify this as a Docker-only build
+LABEL builder="docker" \
+      build.type="dockerfile" \
+      nixpacks.disable="true"
 
 # Set working directory
 WORKDIR /app

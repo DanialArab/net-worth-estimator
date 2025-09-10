@@ -8,6 +8,10 @@ import tempfile
 from pathlib import Path
 from typing import Dict, Optional
 
+# Force Docker build environment
+os.environ['DOCKER_BUILD_ONLY'] = 'true'
+os.environ['NIXPACKS_DISABLE'] = 'true'
+
 import uvicorn
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
