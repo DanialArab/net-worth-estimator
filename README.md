@@ -339,6 +339,47 @@ pip install -r requirements.txt
 uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+## 📊 Synthetic Data & Training Dataset
+
+### Wealthy Individuals Database
+
+**Dataset:** `data/wealthy_individuals.json` contains **10 synthetic wealthy individuals**
+
+**Data Structure:**
+```json
+{
+  "id": 1,
+  "name": "Tech Mogul Alpha",
+  "net_worth": 180000000000,
+  "industry": "Technology",
+  "embedding": [0.12, -0.34, 0.78, ...] // 32-dimensional synthetic embedding
+}
+```
+
+### ⚠️ **Important: All Data is Synthetic**
+
+- ✅ **Names**: Fictional individuals ("Tech Mogul Alpha", "Energy Tycoon Beta", etc.)
+- ✅ **Net Worth Values**: Realistic but synthetic wealth figures
+- ✅ **Embeddings**: Randomly generated 32-dimensional vectors (not real facial features)
+- ✅ **Industries**: Representative industry categories
+
+### Why Synthetic Data?
+
+1. **Privacy Protection**: No real individuals' biometric data used
+2. **Ethical Compliance**: Avoids potential discrimination or privacy violations
+3. **Demonstration Purpose**: Shows technical implementation without real-world risks
+4. **Legal Safety**: No copyright, privacy, or consent issues
+5. **Reproducible Results**: Consistent testing and development
+
+### Data Generation Process
+
+- **Embeddings**: Generated using `np.random.randn()` with controlled variance
+- **Net Worth**: Realistic billionaire wealth ranges ($54B - $180B)
+- **Names**: Generic placeholder names with industry themes
+- **Industries**: 10 major business sectors represented
+
+ℹ️ **Note:** In a production system, this would be replaced with properly obtained, consented, and legally compliant real data.
+
 ## 🎯 Assumptions & Limitations
 
 ### Assumptions Made
