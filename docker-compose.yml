@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  net-worth-estimator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data:ro  # Mount data directory as read-only
+      - ./logs:/app/logs     # Mount logs directory for persistent logging
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
