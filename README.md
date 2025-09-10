@@ -159,8 +159,8 @@ curl -X POST "http://localhost:8000/predict" \
 
 **Key Features:**
 - Efficient matrix operations using NumPy/scikit-learn
-- Multiple estimation algorithms
-- Deterministic results for consistency and reproducibility
+- Multiple estimation algorithms for different use cases
+- Consistent results - same image always produces same estimate
 - Confidence scoring based on similarity scores
 
 #### 3. API Layer (`main.py`)
